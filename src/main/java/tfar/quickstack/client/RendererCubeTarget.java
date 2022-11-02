@@ -1,8 +1,8 @@
 package tfar.quickstack.client;
 
-import net.minecraft.core.BlockPos;
-
 import java.util.Objects;
+
+import net.minecraft.core.BlockPos;
 
 public class RendererCubeTarget {
 

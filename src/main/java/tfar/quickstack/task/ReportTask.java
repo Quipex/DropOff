@@ -1,13 +1,14 @@
 package tfar.quickstack.task;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.sounds.SoundEvents;
-import tfar.quickstack.config.DropOffConfig;
-import tfar.quickstack.client.RenderWorldLastEventHandler;
-import tfar.quickstack.client.RendererCubeTarget;
-import tfar.quickstack.client.ClientUtils;
+import static tfar.quickstack.util.MessageUtils.red;
 
 import java.util.List;
+
+import net.minecraft.sounds.SoundEvents;
+import tfar.quickstack.client.ClientUtils;
+import tfar.quickstack.client.RendererCubeTarget;
+import tfar.quickstack.client.events.RenderWorldLastEventHandler;
+import tfar.quickstack.config.DropOffConfig;
 
 public class ReportTask implements Runnable {
 
@@ -17,7 +18,7 @@ public class ReportTask implements Runnable {
     private final List<RendererCubeTarget> rendererCubeTargets;
 
     public ReportTask(int itemsCounter, int affectedContainers, int totalContainers,
-                      List<RendererCubeTarget> rendererCubeTargets) {
+            List<RendererCubeTarget> rendererCubeTargets) {
         this.itemsCounter = itemsCounter;
         this.affectedContainers = affectedContainers;
         this.totalContainers = totalContainers;
@@ -31,17 +32,9 @@ public class ReportTask implements Runnable {
         }
 
         if (DropOffConfig.Client.displayMessage.get()) {
-            String message = String.valueOf(ChatFormatting.RED) +
-                    itemsCounter +
-                    ChatFormatting.RESET +
-                    " items moved to " +
-                    ChatFormatting.RED +
-                    affectedContainers +
-                    ChatFormatting.RESET +
-                    " containers of " +
-                    ChatFormatting.RED +
-                    totalContainers +
-                    ChatFormatting.RESET +
+            String message = red(String.valueOf(itemsCounter)) +
+                    " items moved to " + red(String.valueOf(affectedContainers)) +
+                    " containers of " + red(String.valueOf(totalContainers)) +
                     " checked in total.";
 
             ClientUtils.printToChat(message);

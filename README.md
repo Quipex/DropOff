@@ -1,4 +1,4 @@
-### [DropOff mod](https://minecraft.curseforge.com/projects/dropoff) for Minecraft.
+### [QuickStack (aka DropOff) mod](https://minecraft.curseforge.com/projects/dropoff) for Minecraft.
 ***
 Mod, in functionality similar to the DropOff button from the [Quark](https://minecraft.curseforge.com/projects/quark), but with hot key and flexible configuration for any needs.<br />
 <br />
